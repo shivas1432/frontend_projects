@@ -1,0 +1,474 @@
+/* Define the custom font */
+@font-face {
+    font-family: 'MyCustomFont';
+    src: url('fonts/font.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+/* Apply the custom font to headings only */
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'MyCustomFont', sans-serif;
+}
+
+body {
+    font-family: font, sans-serif;
+    font-size: 15px;
+    margin: 0;
+    padding: 0;
+    color: #515d5d;
+    background-color:rgba(14, 13, 13, 0.9);
+}
+
+header {
+    background-color: #333;
+    padding: 10px 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+nav {
+    flex: 1;
+}
+
+/* Navigation Styles */
+nav ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    font-family: 'MyCustomFont', sans-serif;
+  
+}
+
+nav ul li {
+    margin-right: 20px;
+    position: relative;
+    
+}
+.popup {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 800px; /* Adjust width as needed */
+    padding: 20px;
+    display: none; /* Hidden by default */
+    border: 1px solid #ccc;
+    z-index: 1000;
+    background-color: #030303;
+    backdrop-filter: blur(20px);
+    border-radius: 10px; /* Adjust border-radius as needed */
+}
+
+.popup h2 {
+   
+    margin-top: 0;
+    color: #cf3333;
+    font-size: 24px; /* Adjust font-size as needed */
+    font-family: 'Courier New', Courier, monospace;
+}
+
+.dropdown:hover .popup,
+.popup:not(.hidden) {
+    display: block; /* Show the popup when hovering over the parent li or when it's not hidden */
+}
+
+.hidden {
+    display: none;
+}
+
+nav ul li a {
+    color: rgb(136, 177, 227);
+    text-decoration: none;
+    font-weight: bold;
+}
+
+
+.search-container {
+    display: flex;
+    align-items: center;
+    margin-left: 20px; /* Add space between the search bar and the menu */
+}
+
+#search {
+    padding: 5px;
+    border-radius: 3px;
+    border: 1px solid #ddd;
+    margin-right: 5px;
+}
+
+button {
+    padding: 5px 10px;
+    border: none;
+    border-radius: 3px;
+    background-color: #555;
+    color: white;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #777;
+}
+
+
+
+/* Main Content */
+main {
+    padding: 20px;
+}
+
+.container {
+    width: 100%;
+    height:auto;
+    margin: 0 auto;
+}
+
+.section {
+    margin-bottom: 20px;
+}
+
+
+/* Flexbox Layout */
+.flex-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.flex-item {
+    flex: 1 1 calc(33.333% - 20px);
+    box-sizing: border-box;
+    border: 1px solid #ddd;
+    padding: 15px;
+    border-radius: 5px;
+}
+
+/* Grid Layout */
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+}
+
+.grid-item {
+    border: 1px solid #ddd;
+    padding: 15px;
+    border-radius: 5px;
+}
+
+/* Slider */
+/* Slider Container */
+.slider {
+    position: relative;
+    max-width: 100%;
+    margin: 20px 0;
+    overflow: hidden;
+    border-radius: 5px;
+    height: 600px;
+   
+    border-radius: 20px;
+    object-fit: cover; 
+    border-width: 1px;
+    border-style: solid;
+    /* Set a fixed height for the slider */
+}
+
+/* Slides Wrapper */
+.slides {
+    display: flex;
+    width: 100%; 
+    height: 100%;/* Ensure slides take full width */
+    animation: slide-animation 12s infinite; /* Slide animation that runs infinitely */
+}
+
+/* Individual Slide */
+.slide {
+    flex: 1 0 100%; /* Ensure each slide takes full width of the container */
+    box-sizing: border-box;
+    height: 100%; /* Ensure slide takes full height of the slider */
+}
+
+/* Image Styling */
+.slide img {
+    width: 100%;
+    height: 100%;
+    /* Ensure the image covers the container without distortion */
+}
+@keyframes slide-animation {
+    0% {
+        transform: translateX(0); /* First slide */
+    }
+    33% {
+        transform: translateX(0); /* First slide hold for a bit */
+    }
+    34% {
+        transform: translateX(-100%); /* Second slide */
+    }
+    66% {
+        transform: translateX(-100%); /* Second slide hold */
+    }
+    67% {
+        transform: translateX(-200%); /* Third slide */
+    }
+    100% {
+        transform: translateX(-200%); /* Third slide hold */
+    }
+}
+.flex-container {
+    display: flex;
+    gap: 10px; /* Adds space between the small containers */
+    overflow: hidden; 
+    justify-content: space-evenly;
+    justify-content: space-between;
+    display: flex;
+    height: 100%; /* Full viewport height */
+    width: 100%; /* Full viewport width */
+    margin-bottom: 30px;
+}
+
+
+.small-container {
+    width: 200px;
+    height: 250px;
+ 
+    border: 1px solid #482828;
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 10px;
+    box-sizing: border-box;
+    position: relative;
+}
+
+.game-image {
+    width: 100%;
+    height: 135px;
+    object-fit: cover;
+    border-radius: 5px;
+}
+
+.game-info {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+}
+
+.game-name {
+    margin: 10px 0;
+    font-size: 16px;
+    text-align: center;
+}
+
+.play-button {
+    background-color: #555;
+    color: white;
+    border: none;
+    border-radius: 3px;
+    padding: 5px;
+    cursor: pointer;
+    font-size: 18px;
+}
+
+.play-button:hover {
+    background-color: #777;
+}
+
+/* Hide the default audio controls */
+audio {
+    display: none;
+}
+
+
+/* Footer */
+.footer-container {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 10px 0;
+    margin-top: 20px;
+    
+}
+
+.social-media a {
+    color: white;
+    text-decoration: none;
+    margin: 0 10px;
+}
+
+/* Miscellaneous */
+.hidden {
+    display: none;
+}
+
+.game-list-item {
+    border: 1px solid #ddd;
+    padding: 10px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+   
+}
+
+.game-title {
+    font-weight: bold;
+}
+.flex-container1{
+    justify-content: space-between;
+    display: flex;
+    height: 100%; /* Full viewport height */
+    width: 100%; /* Full viewport width */
+   
+    padding: 20px;
+    padding-top: 80px;
+    flex-wrap: wrap;
+     /* Background for flex container */
+}
+
+/* Sidebar (30% Width) */
+.sidebar {
+    flex: 0 0 28%; /* Fixed at 30% of the container */
+    color: rgb(126, 111, 111);
+    font-family: 'MyCustomFont', sans-serif;
+
+    overflow-y: auto; /* Enables scrolling if content overflows */
+    padding: 20px;
+    border-radius: 20px;
+    padding-left: 40px;
+    border-radius: 20px;
+}
+
+/* Scroll Container in Sidebar */
+.scroll-container {
+   
+    max-height: 100%;
+    overflow-y: auto;
+
+}
+.scroll-container h2{
+   padding-left: 90px;
+   font-family: 'MyCustomFont', sans-serif;
+}
+
+.game-name {
+   
+    border: 2px solid #4a4848; /* Adjust border thickness and color */
+    border-radius: 10px; /* Match with h4 border-radius or adjust as needed */
+    padding: 10px; /* Space inside the border */
+    margin: 10px 0; /* Space around the border */
+    width: 150px;/* Optional: background color for the game-name div */
+}
+
+/* Style for the h4 inside game-name */
+.game-name h4 {
+   
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    color: #030303;
+    border-radius: 10px;
+    padding: 10px; /* Space inside the h4 */
+}
+
+/* Play Button Styling */
+.play-button {
+    background-color: #4CAF50; /* Green background */
+    color: white;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+/* Play Button Hover Effect */
+.play-button:hover {
+    background-color: #45a049;
+}
+
+/* Right Container (70% Width) */
+#right-container {
+    flex: 0 0 65%; /* Fixed at 70% of the container */
+    /* White background for the right container */
+   
+    display: flex;
+    justify-content: center;
+    align-items: center;
+   background-color: #333;
+   border-radius: 20px;
+   overflow: hidden;
+   
+}
+
+/* Video Styling */
+video {
+    width: 100%; /* Full width of the right container */
+    max-width: 100%; /* Ensure it doesn't overflow */
+    height:500px; /* Maintain aspect ratio */
+    border-radius: 10px; /* Rounded corners for the video */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Shadow around the video */
+    outline: none; /* Removes outline */
+    border-color: #333;
+    object-fit: cover;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .flex-container {
+        flex-direction: column; /* Stack sidebar and right container vertically on small screens */
+    }
+
+    .sidebar, #right-container {
+        flex: 1 0 100%; /* Both sections take up full width on small screens */
+    }
+
+    video {
+        width: 100%; /* Ensure the video covers 100% width on small screens */
+    }
+}
+ /* Sidebar */
+ .sidebar {
+    width: 300px;
+    height: 500px;
+    overflow-y: auto;
+    background-color: #f1f1f1;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    padding: 10px;
+    box-sizing: border-box;
+}
+
+.scroll-container {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.sidebar-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+.game-name {
+    font-size: 14px;
+}
+
+.audio {
+    display: none;
+}
+.parent {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    grid-template-rows: repeat(5, 1fr);
+    grid-column-gap: 0px;
+    grid-row-gap: 0px;
+    }
+    
+    .div1 { grid-area: 2 / 3 / 5 / 6; }
+    .div2 { grid-area: 2 / 1 / 5 / 2; }
+    .img{
+        object-fit: cover;
+    }

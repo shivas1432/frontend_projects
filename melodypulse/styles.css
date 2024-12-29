@@ -1,0 +1,707 @@
+
+@font-face {
+    font-family: 'MyCustomFont';
+    src: url('musicals/Musicals.ttf') format('truetype');
+}
+
+body {
+    font-family: MyCustomFont, sans-serif;
+    
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    margin: 0;
+    background: linear-gradient(to right, #6579BE, #ba604c);
+    background: radial-gradient(circle, #d210d2, 92736C);
+    background-size: 400% 400%;
+    animation: waveAnimation 10s ease infinite;
+}
+
+@keyframes waveAnimation {
+    0% {
+        background-position: 0% 0%;
+    }
+    25% {
+        background-position: 50% 50%;
+    }
+    50% {
+        background-position: 100% 100%;
+    }
+    75% {
+        background-position: 50% 0%;
+    }
+    100% {
+        background-position: 0% 0%;
+    }
+}
+
+
+
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: #333;
+    padding: 10px 30px;
+    z-index: 1000;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: white;
+  }
+  
+  .navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+  }
+  
+  .logo {
+    font-size: 20px;
+    font-weight: bold;
+    
+  }
+  
+  .player-controls {
+    display: flex;
+    align-items: center;
+  
+
+  }
+  
+  .song-name1 {
+    margin-right: 20px;
+    font-size: 16px;
+    color: #abb0b4;
+  font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+   
+  }
+ 
+  
+  .control-button {
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    padding: 8px 6px;
+   
+    font-size: 15px;
+    cursor: pointer;
+    border-radius: 5px;
+  }
+  
+  .control-button:hover {
+    background-color: #45a049;
+  }
+  
+  /* Main Content Padding to Avoid Overlap with Fixed Navbar */
+  main {
+    margin-top: 100px; /* Adjust margin to match the height of the fixed navbar */
+    padding: 20px;
+  }
+  
+  /* Media Queries for Responsiveness */
+  @media (max-width: 768px) {
+    .navbar {
+     
+        text-align:end;
+    
+    }
+    .logo {
+        font-size: 15px;
+       
+        
+      }
+    .control-button {
+        font-size: 14px;
+    }
+  
+    .player-controls {
+      margin-top: 10px;
+      
+
+    }
+  }
+
+.big-container {
+    display: grid;
+grid-template-columns: 0.3fr 1fr 0.3fr;
+grid-template-rows: 0.1fr 0.5fr 0.4fr;
+grid-column-gap: 0px;
+grid-row-gap: 0px;
+  
+}
+
+
+.sidebar { 
+    grid-area: 2 / 1 / 4 / 2;;/* Occupies all rows from 1 to 6 in column 1 */
+    width: 100%;
+    height: 100%;
+    
+  
+ 
+    
+  
+}
+
+.profile-photo {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    margin-bottom: 20px;
+    display: block;
+    margin: 0 auto;
+}
+
+.profile-name {
+    text-align: center;
+    margin-bottom: 20px;
+}
+#top-section h4,
+#bottom-section h4 {
+    display: flex;
+    align-items: center;
+    margin: 10px 0;
+    padding: 10px;
+    border-radius: 5px;
+    transition: background 0.1s ease, transform 0.1s ease, box-shadow 0.1s ease;
+    cursor: pointer;
+}
+
+#top-section h4:hover,
+#bottom-section h4:hover {
+    background: #444;
+    transform: translateX(5px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+#top-section {
+padding-left: 10px;
+
+}
+
+#bottom-section {
+   
+    padding-left: 10px;
+    
+}
+#top-section img{
+    width:20px;
+    height:20px;
+    object-fit: cover;
+    
+  
+}
+#bottom-section img{
+    width:20px;
+    height:20px;
+}
+
+.icon {
+    width: 24px;
+    height: 24px;
+    margin-right: 10px;
+    transition: transform 0.3s ease;
+}
+
+#top-section h4:hover .icon,
+#bottom-section h4:hover .icon {
+    transform: rotate(15deg) scale(1.1);
+}
+
+
+.div2 {
+    background-color: rgb(34, 27, 19);
+    grid-area: 2 / 2 / 3 / 3;  /* Spans across columns 2 to 5, rows 1 to 3 */
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center; /* Align content centrally */
+    overflow: hidden; /* Prevent overflow */
+    width: 100%;
+    height: 100%;
+}
+.div3{
+    grid-area: 2 / 3 / 4 / 4; 
+}
+.albums-container{
+    grid-area: 3 / 2 / 4 / 3; 
+    
+}
+
+
+
+/* Basic Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.item {
+    width: 100px;
+    height: 150px;
+    list-style-type: none;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 1;
+    background-position: center;
+    background-size: cover;
+    border-radius: 10px;
+    box-shadow: 0 10px 20px rgba(255, 255, 255, 0.2) inset;
+    transition: transform 0.1s, left 0.75s, top 0.75s, width 0.75s, height 0.75s;
+    
+}
+.item-button {
+    position: absolute;
+    background: rgba(0, 0, 0, 0.6);
+    color: white;
+    border: none;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    font-size: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: opacity 0.3s ease, transform 0.3s ease;
+    margin: 60px;
+    margin-left: 30px;
+  }
+
+  .play-button {
+    background: rgba(0, 0, 0, 0.6);
+}
+
+.pause-button {
+    background: rgba(0, 0, 0, 0.6);
+    display: none; /* Hide pause button by default */
+}
+
+.item-button.show {
+    display: flex;
+}
+  
+ 
+  .item-button:hover {
+    transform: scale(1.1); /* Slightly enlarges the button on hover */
+    background: rgba(0, 0, 0, 0.8); /* Darkens the background on hover */
+  }
+
+.item:nth-child(1),
+.item:nth-child(2) {
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    transform: none;
+    border-radius: 0;
+    box-shadow: none;
+    opacity: 1;
+}
+
+.item:nth-child(3) {
+    left: 25%; /* Adjusted positioning to fit within div2 */
+}
+
+.item:nth-child(4) {
+    left: calc(25% + 120px); /* Adjust positioning */
+}
+
+.item:nth-child(5) {
+    left: calc(25% + 240px); /* Adjust positioning */
+}
+
+.item:nth-child(6) {
+    left: calc(25% + 360px);
+    opacity: 0;
+}
+
+.content {
+    width: min(20vw, 250px);
+    position: absolute;
+    top: 50%;
+    left: 1.5rem;
+    transform: translateY(-50%);
+    font: 400 0.75rem helvetica, sans-serif;
+    color: white;
+    text-shadow: 0 2px 5px rgba(0, 0, 0, 0.4);
+    opacity: 0;
+    display: none;
+   
+}
+
+.item:nth-of-type(2) .content {
+    display: block;
+    animation: show 0.75s ease-in-out 0.3s forwards;
+}
+
+@keyframes show {
+    0% {
+        filter: blur(5px);
+        transform: translateY(calc(-50% + 60px)); /* Adjust for smaller size */
+    }
+
+    100% {
+        opacity: 1;
+        filter: blur(0);
+    }
+}
+
+/* Navigation arrows */
+.nav {
+    position: absolute;
+    bottom: 1.5rem;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 5;
+    user-select: none;
+   
+}
+
+.nav .btn {
+    background-color: rgba(255, 255, 255, 0.4);
+    color: rgba(0, 0, 0, 0.6);
+    border: 2px solid rgba(0, 0, 0, 0.5);
+    margin: 0 0.2rem;
+    padding: 0.6rem;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.nav .btn:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+}
+
+/* Responsive changes for different screen sizes */
+@media (width > 650px) and (width < 900px) {
+
+      .content {
+      font-size: 2vw; /* Font size relative to viewport width */
+    }
+    .content .title {
+      font-size: 1.5em; /* Relative to parent font size */
+    }
+    .content .description {
+      font-size: 1em; /* Relative to parent font size */
+    }
+    .content button {
+      font-size: 1em; /* Relative to parent font size */
+    }
+    .item {
+      width: 20vw; /* Width relative to viewport width */
+      height: 40vh; /* Height relative to viewport height */
+      
+    }
+}
+
+@media (width < 650px) {
+    .content {
+        font-size: 2vw; /* Font size relative to viewport width */
+      }
+      .content .title {
+        font-size: 1.5em; /* Relative to parent font size */
+      }
+      .content .description {
+        font-size: 1em; /* Relative to parent font size */
+      }
+      .content button {
+        font-size: 1em; /* Relative to parent font size */
+      }
+      .item {
+        width: 50px; /* Width relative to viewport width */
+        height: 100px;
+         /* Height relative to viewport height */
+         
+      }
+      .item-button{
+        width:10px;
+        height: 15px;
+      }
+    }
+    .flex-container {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 20px; /* Space between items */
+        justify-content: center;
+        width: 100%;
+        max-height: 100%;
+        margin-top: 120px;
+        perspective: 1000px; /* Adds perspective to the container for 3D effect */
+        
+    }
+    
+    .flex-container h2 {
+
+        text-align: center;
+        margin: 20px;
+        justify-items: center;
+    }
+    
+    .flexitem {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 100px; 
+        /* Width of each item */
+        padding: 10px;
+        background-color: #2a252523;
+        border: 1px solid #ddd;
+        border-radius: 8px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        cursor: pointer;
+        transition: transform 0.3s, box-shadow 0.3s; /* Smooth transition for transform and shadow */
+        transform-style: preserve-3d; /* Enables 3D transformation of children */
+    }
+    
+    .flexitem:hover {
+        transform: rotateY(10deg) rotateX(10deg); /* Rotates the item for a 3D effect */
+        box-shadow: 0 8px 10px rgba(0, 0, 0, 0.2); /* Adds a deeper shadow on hover */
+    }
+    .flexitem p{
+        font-family: MyCustomFont, sans-serif;
+       font-size: 15px;
+       
+    }
+    
+    .pic {
+        width: 100%; /* Width of the icon */
+        height: 100px; /* Height of the icon */
+        border-radius: 10%;
+    }
+    
+    .name {
+        margin: 0;
+        font-size: 20px;
+        color: #333;
+        margin-top: 10px;
+    }
+    
+    .recommended-songs {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(120px,1fr));
+        gap: 3px;
+        max-width: 240px;
+        margin:2px;
+        background-color: #231b1b2e;
+        border-radius: 20px;
+        margin-left: 5px;
+      
+       
+        
+       
+    }
+
+    .recommended-songs h2 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+    
+    .song {
+        width: 220px;
+        height:100%;
+        display: flex;
+        align-items: center;
+        padding: 5px;
+        border-radius: 5px;
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+        cursor: pointer;
+        margin-left: 10px;
+        
+        
+    }
+    .song:hover {
+        transform: translateY(-5px) scale(1.03);
+        box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+    }
+    
+    .song-icon {
+        width: 35px; /* Adjust the icon size */
+        height: 35px; /* Adjust the icon size */
+        object-fit: cover;
+        margin-right: auto;
+        
+        border-radius: 50%;
+      
+        
+    }
+    .song:hover .song-icon {
+        transform: rotate(10deg) scale(1.1);
+    }
+    
+    .song-name {
+        
+        font-size: 14px;
+        font-weight: 100;
+        color: #0f0e0e;
+      
+      
+    }
+
+.song:hover .song-name {
+    color: #0a0a0a;
+    font-size: medium;
+}
+    .albums-container {
+        width: 100%;
+        height: 100%;
+        margin: auto;
+        overflow: hidden;
+        position: relative;
+        background-color: #00000029;
+        border-radius: 20px;
+        margin-top: 40px;
+           
+    }
+    
+     .albums-container h2{
+        margin-top: 10px;
+        text-align: center;
+        text-align: center;
+        margin-bottom: 30px;
+        
+    }
+    
+    .albums {
+        margin-top: 30px;
+        display: flex;
+        flex-wrap: nowrap;
+        overflow: hidden;
+        transition: transform 0.3s ease;
+        cursor: pointer;
+          
+    }
+    
+    .album-item {
+        flex: 1 0 16%; /* Adjust to fit 6 items in the container */
+        margin: 0 10px;
+        box-sizing: border-box;
+        text-align: center;
+        min-width: 100px;
+    }
+    
+    .album-image {
+        width: 100%;
+        height: 100px;
+        background-size: cover;
+        background-position: center;
+        border-radius: 5px;
+        background-color: #000000;
+    }
+    
+    .album-name {
+        margin-top: 10px;
+        font-size: 14px;
+    }
+    
+    .more-albums {
+        text-align: center;
+        margin-top: 10px;
+        
+    }
+    
+    #show-more {
+        background: transparent;
+        border: none;
+        font-size: 40px;
+        cursor: pointer;
+        outline: none;
+        
+    }
+    
+/* Main Container */
+.tags {
+    width:240px;
+    height: 190px;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+    gap: 2px;
+    background-color: #2b242474;
+    border-radius: 20px;
+    padding: 15px;
+    perspective: 1000px; 
+    /* Adding perspective for 3D effect */
+  }
+  
+  
+  /* Small Containers with 3D Effect */
+  .small-container {
+    width: 100%;
+    height: 30px;
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: start;
+    border: 1px solid #9f7f7f;
+    font-size: 10px;
+    background-color: #baa7e623;
+   text-align: start;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* 3D shadow effect */
+    transform: rotateX(0) rotateY(0);
+  }
+  
+  .small-container:hover {
+    transform: rotateX(10deg) rotateY(10deg) translateZ(10px);
+    box-shadow: 0 10px 15px rgba(0, 0, 0, 0.3); /* Enhanced shadow on hover */
+  }
+  
+  /* Icon and Name Styling */
+  .icon {
+    font-size: 18px;
+ border-radius: 50%;
+   display: flex;
+   text-align: center;
+  }
+ 
+  
+  .name {
+    
+    font-size: 13px;
+    color: #1f0c0c;
+    font-weight: bold;
+    color: #0b0910;
+   margin-top: 3px;
+   font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  }
+  /* Footer Styles */
+.footer-container {
+    background-color: #333; /* Dark background */
+    color: white; /* Text color */
+    text-align: center; /* Center all text */
+    padding: 20px 0; /* Padding for top and bottom */
+    margin-top: 20px; /* Margin on top to separate from other content */
+}
+
+.footer-container p {
+    margin: 5px 0; /* Add small space between paragraphs */
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+.footer-container a {
+    color: #ffffff; /* Link color */
+    text-decoration: none; /* Remove underline from links */
+    margin: 0 10px; /* Add space between links */
+}
+
+.footer-container a:hover {
+    color: #ccc; /* Slightly change link color on hover */
+}
+
+.social-media {
+    margin-top: 10px; /* Add space above social media links */
+}
+
+.social-media a {
+    color: white;
+    margin: 0 10px; /* Space between social media links */
+}
+
+.social-media a:hover {
+    color: #ccc; /* Slightly change color on hover for social media links */
+}

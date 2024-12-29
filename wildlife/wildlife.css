@@ -1,0 +1,439 @@
+/* General Reset and Universal Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+/* CSS for hiding and showing the dropdown with transitions */
+.none {
+    display: none;
+}
+
+.hide {
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s ease;
+}
+
+.dropdown__wrapper--fade-in {
+    opacity: 1;
+    pointer-events: auto;
+    transition: opacity 0.3s ease;
+}
+
+
+:root {
+    --primary: #625BFE;
+    --text: #0F192D;
+    --text-gray: #5A678C;
+    --gray: #c0bcff;
+    --error: #E3452F;
+}
+
+
+
+* {
+    box-sizing: border-box;
+}
+
+header {
+    position: fixed;
+    height: 80px;
+    padding: 0 16px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    background-color: var(--primary);
+    justify-content: end;
+}
+
+.navigation__group {
+    display: flex;
+    gap: 16px;
+    align-items: center;
+}
+
+.navigation__group > .icon {
+    cursor: pointer;
+    width: 36px;
+    height: 36px;
+    transition: all 0.2s ease-in-out;
+}
+
+.navigation__group > .icon:hover {
+    transform: scale(1.1);
+}
+
+.user-name {
+    font-size: 14px;
+    font-weight: 700;
+    text-align: left;
+    color: var(--text);
+}
+
+.profile {
+    display: block;
+    width: 50px;
+    height: 50px;
+    cursor: pointer;
+    border-radius: 50%;
+    border: 3px solid #f7f7f7;
+    filter: drop-shadow(-20px 0 10px rgba(0, 0, 0, 0.1));
+}
+
+.profile:hover {
+    transform: scale(1.05);
+    transition: all 0.2s ease-in-out;
+}
+
+.email {
+    color: var(--text-gray);
+}
+
+.dropdown__wrapper {
+    width: 240px;
+    top: 88px;
+    right: 16px;
+    position: absolute;
+    border-radius: 8px;
+    border: 1px solid var(--text-gray);
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    animation: fadeOutAnimation ease-in-out 0.3s forwards;
+}
+
+.dropdown__wrapper--fade-in {
+    animation: fadeInAnimation ease-in-out 0.3s forwards;
+}
+
+.none {
+    display: none;
+}
+
+.hide {
+    opacity: 0;
+    visibility: hidden;
+    animation: fadeOutAnimation ease-in-out 0.3s forwards;
+}
+
+
+@keyframes fadeInAnimation {
+    0% {
+        opacity: 0;
+        visibility: hidden;
+        width: 160px;
+    }
+    100% {
+        opacity: 1;
+        visibility: visible;
+        width: 240px;
+    }
+}
+
+@keyframes fadeOutAnimation {
+    0% {
+        opacity: 1;
+        width: 240px;
+        visibility: visible;
+    }
+    100% {
+        opacity: 0;
+        width: 160px;
+        visibility: hidden;
+    }
+}
+
+.dropdown__group {
+    padding: 12px;
+}
+
+.divider {
+    width: 100%;
+    padding: 0;
+    margin: 0;
+}
+
+nav > ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    gap: 4px;
+}
+
+nav > ul > li {
+    height: 40px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 16px;
+    padding-left: 8px;
+    width: 100%;
+}
+
+nav > ul > li > img {
+    height: 24px;
+    width: 24px;
+}
+
+nav > ul > li:hover {
+    cursor: pointer;
+    text-decoration: underline;
+}
+
+
+/* Headline Styling */
+.headline {
+    background-color: #000;
+    padding: 20px;
+    text-align: center;
+}
+
+.headline h1 {
+    color: #fff;
+    font-family: 'Arial Narrow', Arial, sans-serif;
+    text-decoration: underline;
+    font-size: 2.5em;
+    margin-bottom: 10px;
+}
+
+.headline p {
+    color: #2b258a;
+    text-align: right;
+    background-color: #000;
+    border-radius: 10px;
+    padding: 10px 20px;
+    display: inline-block;
+    margin: 0 auto 20px 0;
+}
+
+.headline h3 {
+    color: #fff;
+    text-decoration: underline;
+    text-align: right;
+    font-size: 1.5em;
+    margin-top: 20px;
+}
+
+/* Image Styling */
+img {
+    width: 100%;
+    height: auto;
+    opacity: 0.9;
+}
+
+/* Story Section */
+.story {
+    background-image: url('blue.jpg');
+    background-size: cover;
+    background-position: center;
+    padding: 40px;
+    font-family: 'Georgia', serif;
+    font-size: 18px;
+    color: #333;
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: 20px;
+    background-color: #36312b;
+    color: #fff;
+}
+
+footer a {
+    color: #ffbf00;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+footer a:hover {
+    color: #fff;
+}
+
+footer p,
+footer h2 {
+    color: #fff;
+}
+
+/* Grid Container */
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    grid-gap: 20px;
+    padding: 20px;
+    background-color: #221f1f52;
+}
+.grid-img{
+    border: 0;
+    border-radius: 20px;
+}
+
+.grid-container .grid-item {
+    background-color: #eee;
+    padding: 20px;
+    border-radius: 20px;
+    transition: transform 0.3s ease;
+
+}
+
+.grid-container .grid-item:hover {
+    transform: translateY(-10px);
+}
+.grid-item img{
+    border-radius: 20px;
+}
+
+.cat{
+    background-image: url(pacto-visual-cWOzOnSoh6Q-unsplash.jpg);
+}
+.pegion{
+    background-image: url(pexels-cancmgz-20116616.jpg);
+}
+.horse{
+    background-image: url(pexels-pixabay-52500.jpg);
+}
+.elephant{
+    background-image: url(pexels-eric-kamoga-151630609-17081188.jpg);
+}
+.fish{
+    background-image: url(pexels-sofiya-walrus-945910433-20117135.jpg);
+}
+.sheep{
+    background-image: url(pexels-trinitykubassek-288621.jpg);
+}
+.kangaroo{
+    background-image: url(wallpaperflare.com_wallpaper\ \(1\).jpg);
+    
+  
+}
+
+.dog{
+    background-image: url(cristian-castillo-73pyV0JJOmE-unsplash.jpg);
+}
+.sparrow{
+background-image: url(1341445.png);
+
+}
+
+/* Sparrows and Animals Sections */
+.sparrow, .dog, .cat, .pegion, .horse, .elephant, .fish, .sheep, .kangaroo {
+    background-size: cover;
+    background-position: center;
+    width: 100%;
+    height: 400px;
+  max-height: 500px;
+    position: relative;
+    padding: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+}
+
+.sparrow h1, .dog h1, .cat h1, .pegion h1, .horse h1, .elephant h1, .fish h1, .sheep h1, .kangaroo h1 {
+    font-family: 'Georgia', serif;
+    font-size: 4em;
+    text-align: center;
+    opacity: 0.8;
+    color: #fff;
+}
+
+/* Adjust Paragraph Placement for these Sections */
+.sparrow p, .dog p, .cat p, .pegion p, .horse p, .elephant p, .fish p, .sheep p, .kangaroo p {
+    font-family: 'Times New Roman', serif;
+    font-size: 1.2em;
+    max-width: 400px;
+    text-align: justify;
+    margin-left: auto;
+    margin-right: 10%;
+    color: #fff;
+}
+
+/* Responsive Typography */
+@media (max-width: 768px) {
+    .sparrow h1, .dog h1, .cat h1, .pegion h1, .horse h1, .elephant h1, .fish h1, .sheep h1, .kangaroo h1 {
+        font-size: 2.5em;
+    }
+
+    .sparrow p, .dog p, .cat p, .pegion p, .horse p, .elephant p, .fish p, .sheep p, .kangaroo p {
+        font-size: 1em;
+        margin-left: auto;
+        margin-right: auto;
+        text-align: center;
+    }
+}
+
+/* Subscription Pricing Table */
+.prisingtable {
+    display: flex;
+    justify-content: space-around;
+    background-color: #000;
+    padding: 40px;
+}
+
+.prisingtable h1 {
+    font-size: 2.5em;
+    color: #fff;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.prisingtable p {
+    color: #fff;
+    text-align: center;
+    font-size: 1.2em;
+}
+
+/* Pricing Boxes */
+.silver, .gold, .platinum {
+    flex: 1;
+    margin: 10px;
+    height: 300px;
+    border-radius: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5em;
+    font-weight: bold;
+    color: #fff;
+}
+
+
+
+/* Utility Classes */
+.container {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    padding: 20px;
+    background-color: #000;
+}
+
+.container .box {
+    flex: 1;
+    margin: 10px;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    color: #333;
+    text-align: center;
+}
+
+.container img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+}
+
+.container h3 {
+    margin: 20px 0;
+    font-size: 2em;
+    color: #333;
+}
+
+/* Additional Hover Effects for Professional Feel */
+.container .box:hover {
+    transform: translateY(-10px);
+    transition: all 0.3s ease-in-out;
+}

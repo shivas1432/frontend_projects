@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Game Store</title>
+    <link rel="stylesheet" href="styles.css">
+    
+    <style>
+        
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="#" onclick="showSection('home')">Home</a></li>
+                <li class="dropdown">
+                    <a href="#" onclick="togglePopup('game-types-popup')">Game Types</a>
+                    <div id="game-types-popup" class="popup hidden">
+                        <h2>GAME TYPES</h2>
+                        
+                        <ul class="game-types-list">
+                            <li><a class="pp" href="#" onclick="showGamesByCategory('action')">Action</a></li>
+                            <li><a class="pp" href="#" onclick="showGamesByCategory('adventure')">Adventure</a></li>
+                            <li><a class="pp" href="#" onclick="showGamesByCategory('rpg')">Role-Playing (RPG)</a></li>
+                            <li><a class="pp" href="#" onclick="showGamesByCategory('strategy')">Strategy</a></li>
+                            <li><a class="pp" href="#" onclick="showGamesByCategory('simulation')">Simulation</a></li>
+                            <li><a class="pp" href="#" onclick="showGamesByCategory('puzzle')">Puzzle</a></li>
+                            <li><a class="pp" href="#" onclick="showGamesByCategory('sports')">Sports</a></li>
+                            <li><a class="pp" href="#" onclick="showGamesByCategory('horror')">Horror</a></li>
+                        </ul>
+                   
+                    </div>
+                </li>
+                <li class="dropdown"><a href="#" onclick="togglePopup('games-popup')"> Popular Games</a>
+                <div id="games-popup" class="popup hidden">
+                    <h2>POPULAR-GAMES</h2>
+                    
+                    <ul class="game-list">
+                        <li><a href="#" onclick="showGameDetails('game1')">The Legend of Zelda: Breath of the Wild</br></a></li>
+                        <li><a href="#" onclick="showGameDetails('game2')">The Last of Us Part II</a></li></br>
+                        <li><a href="#" onclick="showGameDetails('game3')">God of War</a></li>
+                        <li><a href="#" onclick="showGameDetails('game4')">Red Dead Redemption 2</a></li>
+                        <li><a href="#" onclick="showGameDetails('game5')">Cyberpunk 2077</a></li>
+                        <li><a href="#" onclick="showGameDetails('game6')">Assassin's Creed Valhalla</a></li>
+                        <li><a href="#" onclick="showGameDetails('game7')">Hades</a></li>
+                        <li><a href="#" onclick="showGameDetails('game8')">Minecraft</a></li>
+                        <li><a href="#" onclick="showGameDetails('game9')">Among Us</a></li>
+                        <li><a href="#" onclick="showGameDetails('game10')">Animal Crossing: New Horizons</a></li>
+                    </ul>
+                
+                </div>
+                </li>
+                <li class="dropdown">
+                    <a href="#" onclick="togglePopup('contact-popup')">Contact</a>
+                    <div id="contact-popup" class="popup hidden">
+                        <h2>Contact Us</h2>
+                        
+                            
+                            <p>Feel free to reach out to us through the following channels:</p>
+                            <p>Email: <a href="mailto:support@gamestore.com">support@gamestore.com</a></p>
+                            <p>Phone: 1-800-555-1234</p>
+                       
+                    </div>
+                </li>
+                <li class="dropdown">
+                    <a href="#" onclick="togglePopup('about-popup')">About</a>
+                    <div id="about-popup" class="popup hidden">
+                        <h2>ABOUT</h2>
+                        <p>We are passionate about bringing you the best games available. Our mission is to provide a diverse selection of games for all types of players.</p>
+                    </div>
+                </li>
+            </ul>
+        </nav>
+        
+        <div class="search-container">
+            <input type="text" id="search" placeholder="Search for games...">
+            <button onclick="searchGames()">Search</button>
+        </div>
+    </header>
+    
+    <main>
+        <div id="home" class="section">
+            <div class="container">
+                <h1 style="color: rgb(123, 160, 180);">Welcome to Our Game Store</h1>
+                <p style="color: rgb(181, 200, 223);">Discover the best games available right now.</p>
+
+                <div class="slider">
+                    <div class="slides">
+                        <div class="slide"><img src="call-of-duty-black-ops-6-game-4k-wallpaper-uhdpaper.com-813@0@j.jpg" alt="Featured Game 1"></div>
+                        <div class="slide"><img src="wp3276758-pubg-4k-wallpapers.jpg" alt="Featured Game 2"></div>
+                        <div class="slide"><img src="wp2366075-fortnite-battle-royal-hd-wallpapers.jpg" alt="Featured Game 3"></div>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+
+       
+        <div class="flex-container">
+            <div class="small-container">
+                <img src="titans.jpeg" alt="Game 1" class="game-image">
+                <div class="game-info">
+                    <h3 class="game-name">TITANS</h3>
+                    <button class="play-button" onclick="toggleMusic('music1')">▶</button>
+                    <audio id="music1" src="game1-bgm.mp3"></audio>
+                </div>
+            </div>
+            <div class="small-container">
+                <img src="ratchet.jpg" alt="Game 2" class="game-image">
+                <div class="game-info">
+                    <h3 class="game-name">RATCHET</h3>
+                    <button class="play-button" onclick="toggleMusic('music2')">▶</button>
+                    <audio id="music2" src="game2-bgm.mp3"></audio>
+                </div>
+            </div>
+            <div class="small-container">
+                <img src="hawked.jpg" alt="Game 3" class="game-image">
+                <div class="game-info">
+                    <h3 class="game-name">HAWKED</h3>
+                    <button class="play-button" onclick="toggleMusic('music3')">▶</button>
+                    <audio id="music3" src="game3-bgm.mp3"></audio>
+                </div>
+            </div>
+            <div class="small-container">
+                <img src="forza.jpeg" alt="Game 4" class="game-image">
+                <div class="game-info">
+                    <h3 class="game-name">FORZA</h3>
+                    <button class="play-button" onclick="toggleMusic('music4')">▶</button>
+                    <audio id="music4" src="game4-bgm.mp3"></audio>
+                </div>
+            </div>
+            <div class="small-container">
+                <img src="forza.jpeg" alt="Game 4" class="game-image">
+                <div class="game-info">
+                    <h3 class="game-name">FORZA</h3>
+                    <button class="play-button" onclick="toggleMusic('music4')">▶</button>
+                    <audio id="music4" src="game4-bgm.mp3"></audio>
+                </div>
+            </div>
+            <div class="small-container">
+                <img src="forza.jpeg" alt="Game 4" class="game-image">
+                <div class="game-info">
+                    <h3 class="game-name">FORZA</h3>
+                    <button class="play-button" onclick="toggleMusic('music4')">▶</button>
+                    <audio id="music4" src="game4-bgm.mp3"></audio>
+                </div>
+            </div>
+            <div class="small-container">
+                <img src="forza.jpeg" alt="Game 4" class="game-image">
+                <div class="game-info">
+                    <h3 class="game-name">FORZA</h3>
+                    <button class="play-button" onclick="toggleMusic('music4')">▶</button>
+                    <audio id="music4" src="game4-bgm.mp3"></audio>
+                </div>
+            </div>
+            <div class="small-container">
+                <img src="forza.jpeg" alt="Game 4" class="game-image">
+                <div class="game-info">
+                    <h3 class="game-name">FORZA</h3>
+                    <button class="play-button" onclick="toggleMusic('music4')">▶</button>
+                    <audio id="music4" src="game4-bgm.mp3"></audio>
+                </div>
+            </div>
+            <div class="small-container">
+                <img src="forza.jpeg" alt="Game 4" class="game-image">
+                <div class="game-info">
+                    <h3 class="game-name">FORZA</h3>
+                    <button class="play-button" onclick="toggleMusic('music4')">▶</button>
+                    <audio id="music4" src="game4-bgm.mp3"></audio>
+                </div>
+            </div>
+            <div class="small-container">
+                <img src="forza.jpeg" alt="Game 4" class="game-image">
+                <div class="game-info">
+                    <h3 class="game-name">FORZA</h3>
+                    <button class="play-button" onclick="toggleMusic('music4')">▶</button>
+                    <audio id="music4" src="game4-bgm.mp3"></audio>
+                </div>
+            </div>
+            <div class="small-container">
+                <img src="forza.jpeg" alt="Game 4" class="game-image">
+                <div class="game-info">
+                    <h3 class="game-name">FORZA</h3>
+                    <button class="play-button" onclick="toggleMusic('music4')">▶</button>
+                    <audio id="music4" src="game4-bgm.mp3"></audio>
+                </div>
+            </div>
+            <div class="small-container">
+                <img src="forza.jpeg" alt="Game 4" class="game-image">
+                <div class="game-info">
+                    <h3 class="game-name">FORZA</h3>
+                    <button class="play-button" onclick="toggleMusic('music4')">▶</button>
+                    <audio id="music4" src="game4-bgm.mp3"></audio>
+                </div>
+            </div>
+            <div class="small-container">
+                <img src="forza.jpeg" alt="Game 4" class="game-image">
+                <div class="game-info">
+                    <h3 class="game-name">FORZA</h3>
+                    <button class="play-button" onclick="toggleMusic('music4')">▶</button>
+                    <audio id="music4" src="game4-bgm.mp3"></audio>
+                </div>
+            </div>
+            <div class="small-container">
+                <img src="forza.jpeg" alt="Game 4" class="game-image">
+                <div class="game-info">
+                    <h3 class="game-name">FORZA</h3>
+                    <button class="play-button" onclick="toggleMusic('music4')">▶</button>
+                    <audio id="music4" src="game4-bgm.mp3"></audio>
+                </div>
+            </div>
+        </div>
+        <div class="flex-container1">
+        <div class="sidebar">
+            <div class="scroll-container">
+                <h2>PLAY&INSTALL</h2>
+                <div class="sidebar-item">
+                    <div class="game-name"><h4>The Legend of Zelda: Breath of the Wild</h4></div>
+                    <button class="play-button">Play</button>
+                    <audio src="game1.mp3"></audio>
+                </div>
+                <div class="sidebar-item">
+                    <div class="game-name"><h4>The Last of Us Part II</h4></div>
+                    <button class="play-button">Play</button>
+                    <audio src="game2.mp3"></audio>
+                </div>
+                <!-- Add more items up to 10 -->
+                <div class="sidebar-item">
+                    <div class="game-name"><h4>The Last of Us Part II</h4></div>
+                    <button class="play-button">Play</button>
+                    <audio src="game3.mp3"></audio>
+                </div>
+                <div class="sidebar-item">
+                    <div class="game-name"><h4>God of War</h4></div>
+                    <button class="play-button">Play</button>
+                    <audio src="game4.mp3"></audio>
+                </div>
+                <div class="sidebar-item">
+                    <div class="game-name"><h4>Red Dead Redemption 2</h4></div>
+                    <button class="play-button">Play</button>
+                    <audio src="game5.mp3"></audio>
+                </div>
+                <div class="sidebar-item">
+                    <div class="game-name"><h4>Cyberpunk 2077</h4></div>
+                    <button class="play-button">Play</button>
+                    <audio src="game6.mp3"></audio>
+                </div>
+                <div class="sidebar-item">
+                    <div class="game-name"><h4>Assassin's Creed Valhalla</h4></div>
+                    <button class="play-button">Play</button>
+                    <audio src="game7.mp3"></audio>
+                </div>
+                <div class="sidebar-item">
+                    <div class="game-name"><h4>Minecraft</h4></div>
+                    <button class="play-button">Play</button>
+                    <audio src="game8.mp3"></audio>
+                </div>
+                <div class="sidebar-item">
+                    <div class="game-name"><h4>Among Us</h4></div>
+                    <button class="play-button">Play</button>
+                    <audio src="game9.mp3"></audio>
+                </div>
+                <div class="sidebar-item">
+                    <div class="game-name"><h4>Animal Crossing: New Horizons</h4></div>
+                    <button class="play-button">Play</button>
+                    <audio src="game10.mp3"></audio>
+                </div>
+            </div>
+         
+        </div>
+        <div id="right-container">
+            <video controls autoplay loop muted poster="poster.png">
+                <source src="4354243-uhd_3840_2160_25fps.mp4" type="video/mp4">
+            </video></div>
+        </div>
+    </div>
+</div>
+        
+
+        
+
+        
+        <div id="about" class="section hidden">
+            <div class="container">
+                <h1>About Us</h1>
+                <p>We are passionate about bringing you the best games available. Our mission is to provide a diverse selection of games for all types of players.</p>
+            </div>
+        </div>
+    </main>
+
+        
+
+       
+
+    <footer class="footer-container">
+        <p>&copy; 2024 Game Store. All rights reserved.</p>
+        <p><a href="#">Terms of Service</a> | <a href="#">Privacy Policy</a></p>
+        <div class="social-media">
+            <a href="#">Facebook</a> | <a href="#">Twitter</a> | <a href="#">Instagram</a>
+        </div>
+    </footer>
+    <script src="script.js"></script>
+
+
+</body>
+</html>

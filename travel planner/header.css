@@ -1,0 +1,132 @@
+/* General Reset */
+html {
+    scroll-behavior: smooth;
+}
+
+
+/* Header Styling */
+.header {
+    position: relative;
+    display: flex;
+    align-items: center;
+    padding: 10px 20px;
+}
+
+.header-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+
+/* Logo Styling */
+.DD-logo img {
+    width: 120px;
+    height: 90px;
+    margin-left: 20px;
+    transition: transform 0.3s ease;
+    background-color: black;
+    border-radius: 20px;
+}
+
+/* Navigation Group */
+.navigation__group {
+    display: flex;
+    align-items: start; 
+    gap: 20px;
+}
+
+/* Navigation Links */
+.nav-links a {
+    color: #b8a7a7;
+    font-size: 20px;
+    text-decoration: none;
+    margin: 0;
+    position: relative;
+    display: inline-block;
+    padding: 10px 15px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Hover Effect for Links */
+.nav-links a:hover {
+    transform: translateY(-4px); /* Lift effect on hover */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3); /* Subtle shadow effect */
+}
+
+/* 3D Effect for Navigation Headings */
+.nav-links h4 {
+    color: rgba(216, 230, 209, 0.988);
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3); /* Subtle shadow for 3D effect */
+    transition: transform 0.2s ease;
+}
+
+.nav-links h4:hover {
+    transform: translateY(-4px);
+    text-shadow: 4px 4px 6px rgba(0, 0, 0, 0.3); /* Enhanced shadow on hover */
+}
+
+/* Contact Button Styling */
+.contact button {
+    background-color: rgb(77, 77, 183);
+    margin-right: 20px;
+    width: 100px;
+    height: 40px;
+    border-radius: 30px;
+    cursor: pointer;
+    border: none;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.2); /* Initial shadow for 3D effect */
+}
+
+/* Button Hover for 3D Effect */
+.contact button:hover {
+    transform: translateY(-4px); /* Lift effect */
+    box-shadow: 4px 4px 12px rgba(0, 0, 0, 0.3); /* Deeper shadow on hover */
+}
+
+/* Media Query for Responsive Design */
+@media (max-width: 768px) {
+    .header-container {
+        flex-direction: column; /* Stack logo and navigation vertically */
+        align-items: flex-start;
+    }
+    
+    .DD-logo img {
+        margin-left: 0;
+        margin-bottom: 10px;
+        transform: scale(0.8); /* Slightly smaller logo on smaller screens */
+    }
+    
+    .navigation__group {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+    }
+    
+    .nav-links a {
+        font-size: 18px; /* Slightly smaller font on mobile */
+    }
+    
+    .contact button {
+        width: 80px;
+        height: 35px;
+    }
+}
+
+/* Additional Media Query for Mobile */
+@media (max-width: 480px) {
+    .DD-logo img {
+        width: 80px;
+        height: 70px;
+    }
+    
+    .nav-links a {
+        font-size: 16px; /* Further adjust font size */
+    }
+    
+    .contact button {
+        width: 70px;
+        height: 30px;
+    }
+}

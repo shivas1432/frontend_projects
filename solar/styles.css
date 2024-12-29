@@ -1,0 +1,705 @@
+
+  .solar-intro {
+    width: 100%;
+    height: 100%;
+    max-height: 600px; /* Maximum height of the container */
+    text-align: center;
+    display: flex;
+    flex-direction: column; /* Stack children vertically */
+    align-items: center; /* Center children horizontally */
+}
+
+.solar-info {
+    color: rgba(33, 81, 8, 0.988);
+    backdrop-filter: blur(1px);
+    display: flex;
+    flex-direction: column; /* Stack children vertically */
+    align-items: center; /* Center children horizontally */
+    margin-bottom: 20px; /* Space between info and solar section */
+}
+
+.solar-info .p1 {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #3ec7417a; /* Background color for the oval */
+    border-radius: 50%; /* Makes the shape oval */
+    text-align: center; /* Centers text horizontally */
+    font-size: 16px;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif; /* Adjust font size as needed */
+    color: #090707; /* Text color */
+    border-color: #157d09;/* Border style */
+}
+.button, .more-button {
+    padding: 15px 30px;
+    font-size: 16px;
+    font-weight: bold;
+    color: white;
+    background-color: #ff5733; /* Primary color for the button */
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    position: relative;
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth transition */
+    transform-style: preserve-3d; /* Preserve 3D transformations */
+   
+}
+
+.button:active, .more-button:active {
+    transform: translateY(6px); /* Pressed down 3D effect */
+   
+}
+
+.button:hover, .more-button:hover {
+    transform: translateY(-3px) scale(1.05); /* Pop-up 3D effect */
+   
+}
+
+/* Specific styles for "Get Started" button */
+.button {
+    background-color: #4ac54c; /* Orange color */
+}
+
+/* Specific styles for "Know About Us" button */
+.more-button {
+    background-color: #3498db; /* Blue color */
+   margin-top: 2px;
+}
+
+
+.solar-container {
+    width: 80%;
+    height: 100%;
+    display: flex;
+    margin-top: 40px;
+    
+   
+}
+.solar-clip, .solar-image {
+    flex: 1;
+    height: 250px;
+    margin: 40px;
+    position: relative;
+    overflow: hidden;
+    transform-style: preserve-3d; /* Preserve 3D transformations */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Shadow effect */
+    border-radius: 10px; /* Rounded corners for a more modern look */
+    transition: transform 0.5s ease, box-shadow 0.5s ease; /* Smooth transitions */
+}
+.solar-clip {
+  
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    animation: rotate 5s infinite linear; /* Apply animation */
+    transform: rotateY(0deg); /* Initial 3D rotation */
+}
+video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transform: rotateY(0deg); /* Initial 3D rotation */
+}
+.solar-image {
+   width: 300px;
+    animation: rotate 5s infinite linear; /* Apply animation */
+    transform: rotateY(0deg); /* Initial 3D rotation */
+}
+.solar-image img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transform: rotateY(0deg); /* Initial 3D rotation */
+}
+
+.solar-container:hover .solar-clip,
+.solar-container:hover .solar-image {
+    transform: rotateY(15deg); /* Slight 3D effect on hover */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.5); /* Enhanced shadow on hover */
+}
+.grid-container{
+    display: grid;
+    grid-template-columns: 0.8fr 0.2fr;
+    grid-template-rows: 0.4fr 0.6fr;
+    grid-column-gap: 13px;
+    grid-row-gap: 21px;
+width: 100%;
+height: 100%;
+margin-top: 80px;
+perspective: 1000px;
+}
+.know-about, .work-info {
+    border-radius: 15px;
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2), inset 0 0 15px rgba(255, 255, 255, 0.2); /* Add inner glow for depth */
+    transform-style: preserve-3d;
+    transition: transform 0.7s cubic-bezier(0.25, 1, 0.5, 1), box-shadow 0.7s cubic-bezier(0.25, 1, 0.5, 1);
+    perspective: 1000px; /* Ensure perspective for 3D effects */
+    transform: perspective(1000px); /* Apply perspective to container */
+}
+
+
+.know-about {
+    background-color: #a1bcab; 
+    padding: 30px;
+    grid-area: 1 / 1 / 2 / 2;
+}
+
+.work-info {
+    background-color: #3c3c4be9; 
+    grid-area: 1 / 2 / 2 / 3;
+    text-align: center;
+    
+}
+.know-about h2, .work-info h2 {
+    font-size: 28px;
+    color: #010810;
+    margin-bottom: 20px;
+}
+.know-about p, .work-info p {
+    font-size: 20px;
+    color: #181e09af;
+    line-height: 1.6;
+}
+.work-info p{
+    color: #fff;
+}
+.work-info h2 {
+    font-size: 30px;
+    color: #afea9f;
+    margin-bottom: 5px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1); /* Subtle 3D text effect */
+}
+.learn-more {
+    margin-top: 60px;
+    padding: 10px 20px;
+    font-size: 16px;
+    color: #fff;
+    background-color: #3498db;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+   
+}
+
+.solar-clip2 {
+    grid-area: 2 / 1 / 3 / 3;
+    background-color: #3498db;
+    width: 100%;
+    height: 400px;
+    max-height: 600px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    border-radius: 15px; /* Rounded corners */
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2); /* Subtle shadow for a lifted effect */
+    position: relative; /* Allows positioning of the overlay */
+}
+
+.solar-clip2 video {
+    width: 100%; /* Make the video take up the full width */
+    height: 100%; /* Make it fill the container */
+    object-fit: cover; /* Ensure the video maintains aspect ratio and fills the container */
+    border-radius: 15px; /* Apply the same rounded corners to the video */
+    position: relative; /* Ensure the video stays within the container */
+}
+
+.video-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(180deg, rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0)); /* Subtle gradient overlay for a professional feel */
+    pointer-events: none; /* Ensures the overlay doesn't interfere with video controls */
+    z-index: 1; /* Places the overlay above the video */
+}
+
+.solar-clip2:hover video {
+    transform: scale(1.02); /* Slight zoom-in effect on hover for added dynamism */
+    transition: transform 0.5s ease-in-out; /* Smooth transition for the zoom effect */
+}
+
+.solar-clip2:hover .video-overlay {
+    background: linear-gradient(180deg, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0)); /* Intensify overlay on hover */
+    transition: background 0.5s ease-in-out;
+}
+/* Container for the service boxes */
+.services-heading{
+    background-color: #f9fdf967;
+}
+.services {
+    display: grid;
+    grid-template-columns: repeat(3, 250px) 1fr; /* Three fixed columns and one flexible column */
+    grid-template-rows: 350px; /* One row of fixed height */
+    gap: 20px; /* Space between the grid items */
+    width: 100%; /* Full width of the container */
+    max-width: 1000px; /* Maximum width to keep layout neat */
+    margin: 0 auto; /* Center the container horizontally */
+    padding: 10px; /* Padding around the container */
+    box-sizing: border-box;
+    position: relative;
+   
+}
+
+.service1, .service2, .service3 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 250px;
+    height: 350px;
+    border-radius: 8px; /* Rounded corners */
+    color: white; /* Text color */
+    text-align: center; /* Center text */
+    padding: 20px; /* Padding inside each box */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth transitions */
+}
+.butterfly{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 300px; /* Take up the remaining flexible space */
+    height: 350px; /* Full height */
+    overflow: hidden; /* Ensure the image doesn't overflow */
+    border-radius: 8px;
+    
+}
+.butterfly img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Make sure the image covers the entire container without distortion */
+    border-radius: 8px;
+   
+}
+.service1 {
+    background-color: #010810; /* Dark blue */
+
+}
+
+.service2 {
+    background-color: #1d508a; /* Medium blue */
+}
+
+.service3 {
+    background-color: #157d09; /* Dark green */
+}
+
+/* Hover effect for service boxes */
+.service1:hover, .service2:hover, .service3:hover {
+    transform: translateY(-10px); /* Slight lift effect */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Shadow effect on hover */
+}
+
+/* Title and heading styles */
+.service-title {
+    font-size: 24px;
+    font-weight: 600;
+    color: #333;
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+.service-heading {
+    font-size: 32px;
+    font-weight: 700;
+    color: #333;
+    text-align: center;
+    margin-bottom: 30px;
+   
+}
+.services p{
+    font-size: 15px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+/* Responsive design for smaller screens */
+@media (max-width: 768px) {
+    .services {
+        grid-template-columns: repeat(2, 1fr); /* Two columns for smaller screens */
+    }
+}
+
+@media (max-width: 480px) {
+    .services {
+        grid-template-columns: 1fr; /* Single column for very small screens */
+    }
+    .services-heading{
+        margin-bottom:100px ;
+    }
+}
+/* Container for the whole section */
+/* Container for the whole section */
+.how-it {
+    background-color: #f6fbf567;
+    
+    border-radius: 10px; /* Rounded corners for the whole section */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Subtle shadow for depth */
+    text-align: center;
+    max-width: 100%; /* Restrict the width for larger screens */
+    margin: 0 auto; /* Center the section horizontally */
+}
+.how-it p{
+    font-size: 24px;
+    font-weight: 600;
+    color: #333;
+    text-align: center;
+   
+}
+.how-it h2{
+    font-size: 32px;
+    font-weight: 700;
+    color: #333;
+    text-align: center;
+    
+}
+
+/* Grid layout for containers */
+.how-it-works {
+    display: grid;
+    grid-template-columns: 600px 1fr; /* Left container fixed width, right container takes the remaining space */
+    gap: 20px; /* Space between left and right containers */
+     /* Spacing from top */
+}
+
+/* Left container setup */
+.left-container {
+    background-color: #784848;
+    height:100%; /* Adjusted height for balance */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 10px; /* Rounded corners */
+    overflow: hidden; /* Hide overflow for clean edges */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3); /* Deeper shadow for 3D effect */
+    
+}
+
+/* Image within the left container */
+.how-it-image {
+    width: 100%;
+    height:100%;
+    object-fit: cover;
+   
+}
+
+/* Right container setup */
+.right-container {
+    display: flex;
+    flex-direction: column;
+    gap: 15px; /* Space between small containers */
+    padding: 15px; /* Padding inside the right container */
+    border-radius: 10px; /* Rounded corners */
+    height: 100%; /* Adjusted height for balance */
+}
+
+/* Small containers inside the right container */
+.small-container {
+    background-color: #0d0e0d4d; /* White background for contrast */
+    border: 1px solid #7a9a60; /* Light border for definition */
+    border-radius: 8px; /* Rounded corners */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+    display: flex;
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth transitions */
+ 
+
+}
+.small-container:hover, .service2:hover, .service3:hover {
+    transform: translateY(-10px); /* Slight lift effect */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Shadow effect on hover */
+}
+/* Title and content within small containers */
+.small-container h4 {
+    font-size: 20px;
+    font-weight: 600;
+    color: #333;
+  
+}
+
+.small-container p {
+    font-size: 16px;
+    color: #070709;
+    margin-left: 40px;
+ 
+}
+.container10 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* Ensure the container takes the full height of the viewport */
+    margin: 30px;
+  
+}
+.card {
+    width: 280px;
+    height: 280px;
+    background: white;
+    border-radius: 32px;
+    padding: 3px;
+    position: relative;
+    box-shadow: #604b4a30 0px 70px 30px -50px;
+    transition: all 0.5s ease-in-out;
+   
+  }
+  
+  .card .mail {
+    position: absolute;
+    right: 2rem;
+    top: 1.4rem;
+    background: transparent;
+    border: none;
+  }
+  
+  .card .mail i {
+    color: #67d667;
+    font-size: 25px;
+    transition: .3s ease-in-out;
+    cursor: pointer;
+  }
+  
+  .card .mail i:hover {
+    color: #f55d56;
+  }
+  
+  .card .profile-pic {
+    position: absolute;
+    width: calc(100% - 6px);
+    height: calc(100% - 6px);
+    top: 3px;
+    left: 3px;
+    border-radius: 29px;
+    z-index: 1;
+    border: 0px solid #7ab675;
+    overflow: hidden;
+    transition: all 0.5s ease-in-out 0.2s, z-index 0.5s ease-in-out 0.2s;
+  }
+  
+  .card .profile-pic img {
+    -o-object-fit: cover;
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+    -o-object-position: 0px 0px;
+    object-position: 0px 0px;
+    transition: all 0.5s ease-in-out 0s;
+  }
+  
+  .card .profile-pic img {
+    width: 100%;
+    height: 100%;
+    -o-object-fit: cover;
+    object-fit: cover;
+    -o-object-position: 0px 0px;
+    object-position: 0px 0px;
+    transform-origin: 45% 20%;
+    transition: all 0.5s ease-in-out 0s;
+  }
+  
+  .card .bottom {
+    position: absolute;
+    bottom: 3px;
+    left: 3px;
+    right: 3px;
+    background: #7ab675;
+    top: 80%;
+    border-radius: 29px;
+    z-index: 2;
+    box-shadow: rgba(96, 75, 74, 0.1882352941) 0px 5px 5px 0px inset;
+    overflow: hidden;
+    transition: all 0.5s cubic-bezier(0.645, 0.045, 0.355, 1) 0s;
+  }
+  
+  .card .bottom .content {
+    position: absolute;
+    bottom: 0;
+    left: 1.5rem;
+    right: 1.5rem;
+    height: 160px;
+  }
+  
+  .card .bottom .content .name {
+    display: block;
+    font-size: 1.2rem;
+    color: white;
+    font-weight: bold;
+  }
+  
+  .card .bottom .content .about-me {
+    display: block;
+    font-size: 0.9rem;
+    color: white;
+    margin-top: 1rem;
+  }
+  
+  .card .bottom .bottom-bottom {
+    position: absolute;
+    bottom: 1rem;
+    left: 1.5rem;
+    right: 1.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  
+  .card .bottom .bottom-bottom .social-links-container {
+    display: flex;
+    gap: 1rem;
+  }
+  
+  .card .bottom .bottom-bottom .social-links-container i {
+    height: 20px;
+    color: white;
+    filter: drop-shadow(0 5px 5px rgba(165, 132, 130, 0.1333333333));
+    cursor: pointer;
+  }
+  
+  .card .bottom .bottom-bottom .social-links-container i:hover {
+    color: #7ab675;
+    transform: scale(1.2);
+  }
+  
+  .card .bottom .bottom-bottom .button {
+    background: white;
+    color: #7ab675;
+    border: none;
+    border-radius: 20px;
+    font-size: 0.6rem;
+    padding: 0.4rem 0.6rem;
+    box-shadow: rgba(165, 132, 130, 0.1333333333) 0px 5px 5px 0px;
+    cursor: pointer;
+  }
+  
+  .card .bottom .bottom-bottom .button:hover {
+    background: #7ab675;
+    color: white;
+  }
+  
+  .card:hover {
+    border-top-left-radius: 55px;
+  }
+  
+  .card:hover .bottom {
+    top: 20%;
+    border-radius: 80px 29px 29px 29px;
+    transition: all 0.5s cubic-bezier(0.645, 0.045, 0.355, 1) 0.2s;
+  }
+  
+  .card:hover .profile-pic {
+    width: 100px;
+    height: 100px;
+    aspect-ratio: 1;
+    top: 10px;
+    left: 10px;
+    border-radius: 50%;
+    z-index: 3;
+    border: 7px solid #7ab675;
+    box-shadow: rgba(96, 75, 74, 0.1882352941) 0px 5px 5px 0px;
+    transition: all 0.5s ease-in-out, z-index 0.5s ease-in-out 0.1s;
+  }
+  
+  .card:hover .profile-pic:hover {
+    transform: scale(1.3);
+    border-radius: 0px;
+  }
+  
+  .card:hover .profile-pic img {
+    position: relative;
+    top: -60px;
+    transform: scale(2.5);
+    -o-object-position: 0px 25px;
+    object-position: 0px 25px;
+    transition: all 0.5s ease-in-out 0.5s;
+  }
+  
+  .card:hover .profile-pic img {
+    transform: scale(2.5);
+    transition: all 0.5s ease-in-out 0.5s;
+  }
+.choose-plan {
+    text-align: center;
+    padding: 40px;
+    background-color: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin-top: 20px;
+    margin: 0 auto;
+}
+
+/* Title styling */
+.choose-plan h2 {
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+/* Grid container styling */
+.plan-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+}
+
+/* Individual plan box styling */
+.plan {
+    background-color: #1b141445;
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s, box-shadow 0.3s;
+    text-align: center;
+}
+.price-tag {
+    font-size: 24px;
+    font-weight: 700;
+    color: #7ab74c;
+    background-color: #f0f8ff;
+    border-radius: 5px;
+    padding: 10px 20px;
+    position: relative;
+    top: 20px;
+    right: 20px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Plan box title styling */
+.plan h3 {
+    font-size: 22px;
+    margin-bottom: 15px;
+    margin-bottom: 30px;
+}
+
+/* Plan box paragraph styling */
+.plan p {
+    font-size: 20px;
+    color: #555;
+    margin-bottom: 20px;
+}
+
+/* Button styling */
+.plan button {
+    padding: 10px 20px;
+    font-size: 16px;
+    color: #fff;
+    background-color: #007bff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+/* Button hover effect */
+.plan button:hover {
+    background-color: #61c235;
+}
+
+/* 3D effect on hover for plan boxes */
+.plan:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+

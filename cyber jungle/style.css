@@ -1,0 +1,577 @@
+@import url('aldo_the_apache/AldotheApache.ttf');
+@import url('chopsic/Chopsic.otf');
+
+@font-face {
+    font-family: 'AldoTheApache';
+    src: url('aldo_the_apache/AldotheApache.ttf') format('truetype');
+}
+@font-face {
+    font-family: 'Chopsic';
+    src: url('chopsic/Chopsic.otf') format('opentype');
+}
+@font-face {
+    font-family: 'dash';
+    src: url('dash/Dash-Horizon-Demo.otf') format('opentype');
+}
+
+
+body{margin: 0;
+    background: linear-gradient(135deg, #2e3a28 0%, #524f4e 40%,  #2a5f52 100%);
+}
+.container-fluid{
+   
+    width: 100%;
+}
+.first-section{
+    background-color: #2a5f52;
+}
+.intro {
+    background-color: rgb(46, 52, 58);
+    width: 100%; 
+    height: 700px;
+    max-height: 700px;
+    overflow: hidden; 
+    position: relative; 
+    clip-path: polygon(0 10%, 12% 10%, 15% 0%, 85% 0%, 90% 8%, 100% 9%, 100% 90%, 90% 90%, 85% 100%, 15% 100%, 11% 91%, 0 90%);
+   
+}
+.intro-img {
+    background-image: url("half-rhino-half-robot-creature.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    margin-top: 25px;
+    width: 100%;
+    height: 650px;
+    display: flex;
+    flex-direction: column; /* Align items vertically */
+    justify-content: center; /* Center items vertically */
+    align-items: center; /* Center items horizontally */
+    position: relative;
+    clip-path: polygon(0 10%, 12% 10%, 15% 0%, 85% 0%, 90% 8%, 100% 9%, 100% 90%, 90% 90%, 85% 100%, 15% 100%, 11% 91%, 0 90%);
+}
+
+.intro-img h1 {
+    font-size: 160px;
+    font-family: 'AldoTheApache';
+    color: rgba(253, 252, 252, 0.651);
+    text-align: center; 
+    margin: 0; 
+    position: relative; 
+}
+
+.intro-img p {
+    font-size: 24px;
+    font-family: 'dash'; 
+    color: rgb(240, 225, 225); 
+    text-align: center; 
+    letter-spacing: 3px;
+}
+.intro-img button{
+    background-color: #398ae0;
+    color: rgba(34, 33, 33, 0.877);
+    border: none;
+    padding: 8px 16px;
+    border-radius: 4px;
+    font-size: 20px;
+    border-bottom-right-radius: 30px;
+    border-top-left-radius: 30px;
+    font-family: "chopsic";
+    letter-spacing: 3px;
+
+}
+.intro-img button:hover {
+    background-color: #2a5f52;
+}
+.header-options {
+    width: 100%;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 10px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index:10;
+   
+}
+.large-icon {
+    width: 58px; 
+    height: 58px; 
+    margin-left: 80px;
+ 
+}
+
+.header-nav {
+    display: flex;
+    justify-content: center;
+    gap: 80px;
+}
+
+.header-nav a {
+    text-decoration: none;
+    color: #f5f8fa;
+    font-size: 20px;
+    padding: 20px;
+    margin-bottom: 40px;
+    font-family: 'Chopsic';
+}
+
+.header-button button {
+    background-color: #007bff00;
+    color: white;
+    border: none;
+    padding: 8px 11px;
+    font-family: "chopsic";
+    letter-spacing: 1px;
+}
+.services {
+    background-color: #f8f9fa;
+    padding: 40px 0;
+    text-align: center;
+    
+}
+
+.services h1 {
+    font-size: 56px;
+   margin-bottom: 50px;
+   font-family: "dash";
+}
+
+.services p {
+    font-size: 20px;
+    color: #242525; 
+    font-family: "chopsic";
+    letter-spacing: 3px;
+   
+}
+
+.service-item {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 20px;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-bottom-right-radius: 50px;
+    border-top-left-radius: 50px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.service-item:hover {
+    transform: translateY(-10px) scale(1.05);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+.service-item img {
+    width: 80px; 
+    height: 80px;
+    margin-bottom: 15px;
+}
+
+.service-item h5 {
+    margin-top: 0;
+    font-size: 18px;
+    font-family: 'AldoTheApache';
+    letter-spacing: 3px;
+    color: #1b1a1ac7;
+}
+.achievements {
+    display: flex;
+    height: 500px;
+}
+
+.achievements .left-side {
+    flex: 1;
+    background-image: url("images/IMG-20240831-WA0009.jpg"); 
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    clip-path: polygon(20% 0%, 39% 0, 100% 56%, 100% 100%, 20% 100%, 0 100%, 0 0);
+
+}
+.small-container1 {
+    position: absolute;
+    bottom: 20px;
+    right: 10px;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 20px;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 370px;
+    height: 230px;
+    border-bottom-right-radius: 50px;
+    border-top-left-radius: 50px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.small-container1:hover {
+    transform: translateY(-10px) scale(1.05);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+.small-container1 h4{
+    margin-top: 0;
+    font-size: 18px;
+    font-family: 'AldoTheApache';
+    letter-spacing: 2px;
+    color: #1b1a1ac7;
+}
+.small-container1 p{
+    font-size: 10px;
+    color: #6c757d; 
+    font-family: "chopsic";
+    letter-spacing: 2px;
+   
+}
+
+.achievements .right-side {
+    flex: 1;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.right-side h1 {
+    font-size: 56px;
+    letter-spacing: 2px;
+    margin-bottom: 10px;
+    font-family: "dash";
+}
+
+.right-side p {
+    font-size: 18px;
+    color: #6c757d;
+    font-family: "chopsic";
+    letter-spacing: 2px;
+}
+
+.small-containers {
+    display: flex;
+    justify-content: space-between;
+}
+
+.small-container {
+    flex: 1;
+    background-color: #fafdfd96;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 20px;
+    text-align: center;
+    margin-right: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-bottom-right-radius: 50px;
+    border-top-left-radius: 50px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.small-container:hover {
+    transform: translateY(-10px) scale(1.05);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.small-container h4{
+    margin-top: 0;
+    font-size: 18px;
+    font-family: 'AldoTheApache';
+    letter-spacing: 2px;
+    color: #1b1a1ac7;
+}
+.small-container p{
+    font-size: 10px;
+    color: #6c757d; 
+    font-family: "chopsic";
+    letter-spacing: 2px;
+   
+}
+
+.small-container:last-child {
+    margin-right: 0;
+}
+
+.small-container img {
+    width: 60px; 
+    height: 60px;
+    margin-bottom: 10px;
+}
+.features-container {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    margin-top: 100px;
+    width: 100%;
+    height: 100%;
+}
+
+.left-side {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    height: 100%;
+}
+
+.intro-text {
+   
+    font-size: 18px;
+    font-family: 'AldoTheApache';
+    letter-spacing: 2px;
+    margin-top: 100px;
+}
+
+.main-heading {
+    margin-top: 50px;
+    font-size: 36px;
+    font-family: "dash";
+    letter-spacing: 2px;
+    
+}
+
+.sub-text {
+    margin-top: 50px;
+    font-size: 10px;
+    font-family: "chopsic";
+    letter-spacing: 2px;
+    color: rgba(0, 0, 0, 0.541);
+   
+}
+#button{
+    margin-top: 50px;
+    border-bottom-right-radius: 20px;
+    border-top-left-radius: 20px;
+    font-family: "dash";
+    letter-spacing: 2px;
+    color: black;
+    
+}
+
+.btn-primary {
+    margin-top: 20px;
+    padding: 10px 20px;
+    width: 150px;
+ 
+}
+
+.right-side {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 20px;
+   
+}
+#one, #two, #three, #four{
+    width:100%;
+    height: 300px;
+   
+}
+#one{
+    top:20px;
+    left: 0;
+
+}
+
+.small-container {
+    background-color: #f7f6f6;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 20px;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-bottom-right-radius: 50px;
+    border-top-left-radius: 50px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    margin-top: 20px;
+}
+.small-container p{
+ margin-top: 40px;
+}
+.small-container h4{
+    font-family: "chopsic";
+    letter-spacing: 2px;
+    margin-top: 20px;
+}
+.small-container1 p{
+    margin-top: 20px;
+   }
+   .small-container1 h4{
+       margin-top: 20px;
+       font-family: "chopsic";
+    letter-spacing: 2px;
+   }
+
+.small-container:hover {
+    transform: translateY(-10px) scale(1.05);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+.intro1 {
+    background-color: rgb(46, 52, 58);
+    width: 100%; 
+    height: 700px;
+    max-height: 700px;
+    overflow: hidden; 
+    position: relative; 
+    clip-path: polygon(0 10%, 12% 10%, 15% 0%, 85% 0%, 90% 8%, 100% 9%, 100% 90%, 90% 90%, 85% 100%, 15% 100%, 11% 91%, 0 90%);
+   
+}
+.intro1-img {
+    background-image: url("images/IMG-20240831-WA0004.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    margin-top: 25px;
+    width: 100%;
+    height: 650px;
+    display: flex;
+    flex-direction: column; 
+    justify-content: center;
+    align-items: center; 
+    position: relative;
+    clip-path: polygon(0 10%, 12% 10%, 15% 0%, 85% 0%, 90% 8%, 100% 9%, 100% 90%, 90% 90%, 85% 100%, 15% 100%, 11% 91%, 0 90%);
+}
+.intro-img {
+    padding: 50px 0;
+}
+.intro1-img h1 {
+    font-size: 160px;
+    font-family: 'AldoTheApache';
+    color: rgba(253, 252, 252, 0.651);
+    text-align: center; 
+    margin: 0; 
+    position: relative; 
+}
+.icon {
+    margin-bottom: 10px;
+}
+
+h5 {
+    margin-top: 10px; 
+}
+
+p {
+    color: #666; 
+}
+#six, #seven, #five{
+    margin-top: 300px;
+}
+.community {
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: 15%;
+    margin-right: 10%;
+}
+
+.achievements {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    
+   
+}
+
+.left-side1 {
+   
+    padding: 20px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+.left-side1 p{
+    font-size: 10px;
+    font-family: "chopsic";
+    letter-spacing: 2px;
+}
+.left-side1 h1{
+    font-family: 'AldoTheApache';
+    letter-spacing: 2px;
+}
+.right-side1 {
+    flex: 1;
+    background-image: url("images/WhatsApp\ Image\ 2024-08-31\ at\ 9.09.53\ PM.jpeg"); 
+    background-size: contain;  
+    background-repeat: no-repeat; 
+    background-position: center;
+  height: 100%;
+    position: relative;
+    display: flex;
+   
+}
+.right-side1 img{
+   width: 100%;
+}
+
+.achievement-cards {
+    margin-top: 20px;
+}
+
+.achievement-card-1,
+.achievement-card-2,
+.achievement-card-3 {
+    flex: 1;
+    background-color: #fafdfd96;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 20px;
+    text-align: center;
+    margin-right: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-bottom-right-radius: 50px;
+    border-top-left-radius: 50px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.achievement-card-1 .text,
+.achievement-card-2 .text,
+.achievement-card-3 .text {
+    margin-left: 15px;
+    font-size: 10px;
+    font-family: "chopsic";
+    letter-spacing: 2px;
+}
+
+.achievements-image {
+
+    height: 60px;
+    margin-bottom: 10px;
+}
+.footer-container {
+    background-color: #333; /* Dark background for footer */
+    color: #fff; /* White text color */
+    text-align: center; /* Center the content */
+    padding: 20px 0; /* Vertical padding */
+    font-family: Arial, sans-serif; /* Default font */
+}
+
+.footer-container p {
+    margin: 5px 0; /* Small margin for paragraphs */
+    font-size: 14px; /* Adjust text size */
+}
+
+.footer-container a {
+    color: #fff; /* White link color */
+    text-decoration: none; /* Remove underline */
+    margin: 0 10px; /* Space between links */
+    transition: color 0.3s ease; /* Smooth transition on hover */
+}
+
+.footer-container a:hover {
+    color: #f39c12; /* Change color on hover */
+}
+
+.social-media {
+    margin-top: 10px; /* Add spacing above social media links */
+}
+
+@media (max-width: 600px) {
+    .footer-container {
+        padding: 15px 0; /* Adjust padding for smaller screens */
+    }
+
+    .social-media a {
+        display: block; /* Stack social links vertically on smaller screens */
+        margin: 5px 0; /* Add space between links */
+    }
+}
